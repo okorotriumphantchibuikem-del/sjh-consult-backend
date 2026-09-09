@@ -1,0 +1,822 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f5f7fb;
+    color: #07172d;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #07172d;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.header-container {
+    width: min(1180px, 92%);
+    min-height: 82px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #d4af37;
+    color: #07172d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.brand-text strong {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.brand-text span {
+    margin-top: 4px;
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.desktop-nav a {
+    position: relative;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: #d4af37;
+}
+
+.desktop-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -9px;
+    height: 2px;
+    border-radius: 10px;
+    background: #d4af37;
+}
+
+.nav-create {
+    padding: 11px 18px;
+    border-radius: 8px;
+    background: #d4af37;
+    color: #07172d !important;
+}
+
+.nav-create:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 9px;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+    border-radius: 10px;
+    background: #d4af37;
+    transition: 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    width: min(1180px, 92%);
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.mobile-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu a {
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.mobile-menu a:hover {
+    color: #d4af37;
+}
+
+.mobile-create {
+    margin-top: 12px;
+    text-align: center;
+    border: none !important;
+    border-radius: 8px;
+    background: #d4af37;
+    color: #07172d !important;
+}
+
+.jobs-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+.job-hero {
+    padding: 65px 0 70px;
+    background:
+        radial-gradient(circle at 8% 15%, rgba(212, 175, 55, 0.18), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(43, 116, 183, 0.2), transparent 30%),
+        linear-gradient(135deg, #07172d, #0d2d50);
+    color: #ffffff;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d4af37;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    color: #ffffff;
+    transform: translateX(-3px);
+}
+
+.job-header {
+    margin-top: 42px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.company-logo {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #07172d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.job-title-area {
+    max-width: 800px;
+}
+
+.job-label {
+    color: #d4af37;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.job-title-area h1 {
+    margin-top: 7px;
+    font-family: "Playfair Display", serif;
+    font-size: 46px;
+    line-height: 1.1;
+}
+
+.job-title-area p {
+    margin-top: 7px;
+    color: #d9e3ed;
+    font-size: 20px;
+}
+
+.job-meta {
+    margin-top: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.job-meta > span {
+    padding: 7px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #dfe7ef;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.job-details-section {
+    padding: 75px 0;
+}
+
+.job-details-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 35px;
+    align-items: start;
+}
+
+.job-main {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.details-card {
+    padding: 32px;
+    border: 1px solid #e4e9ef;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(7, 23, 45, 0.05);
+}
+
+.details-card h2 {
+    margin-bottom: 18px;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+}
+
+.details-card p {
+    margin-top: 12px;
+    color: #657386;
+    font-size: 20px;
+    line-height: 1.85;
+}
+
+.details-card ul {
+    padding-left: 20px;
+}
+
+.details-card li {
+    margin: 12px 0;
+    padding-left: 5px;
+    color: #657386;
+    font-size: 18px;
+}
+
+.details-card li::marker {
+    color: #d4af37;
+}
+
+.job-sidebar {
+    position: sticky;
+    top: 105px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.apply-card {
+    padding: 28px;
+    border-radius: 16px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.2), transparent 35%),
+        #07172d;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(7, 23, 45, 0.16);
+}
+
+.apply-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+}
+
+.apply-card p {
+    margin-top: 12px;
+    color: #cbd7e3;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.apply-button {
+    margin-top: 22px;
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 18px;
+    border-radius: 9px;
+    background: #d4af37;
+    color: #07172d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.apply-button:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+.apply-button span {
+    font-size: 18px;
+}
+
+.apply-note {
+    margin-top: 14px;
+    text-align: center;
+    color: #8999aa;
+    font-size: 17px;
+}
+
+.summary-card,
+.company-card {
+    padding: 27px;
+    border: 1px solid #e4e9ef;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(7, 23, 45, 0.05);
+}
+
+.summary-card h3,
+.company-card h3 {
+    margin-bottom: 18px;
+    font-size: 28px;
+}
+
+.summary-item {
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0f4;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.summary-item span {
+    color: #8995a3;
+    font-size: 17px;
+}
+
+.summary-item strong {
+    color: #07172d;
+    font-size: 17px;
+}
+
+.company-card-logo {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 16px;
+    border-radius: 13px;
+    background: #07172d;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.company-card p {
+    color: #687587;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.company-card a {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #b58400;
+    font-size: 17px;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.company-card a:hover {
+    color: #07172d;
+}
+
+.company-card a span {
+    font-size: 17px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.benefit-item {
+    min-height: 70px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f5f7fb;
+    color: #596779;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.benefit-item span {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #fff5cc;
+    color: #b58400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.related-jobs {
+    padding: 0 0 80px;
+}
+
+.section-label {
+    color: #b58400;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 6px;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+}
+
+.related-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.related-card {
+    padding: 22px;
+    border: 1px solid #e4e9ef;
+    border-radius: 15px;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s ease;
+}
+
+.related-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(7, 23, 45, 0.09);
+}
+
+.related-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 11px;
+    background: #07172d;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.related-info {
+    min-width: 0;
+}
+
+.related-info h3 {
+    font-size: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.related-info p {
+    margin-top: 2px;
+    color: #738092;
+    font-size: 17px;
+}
+
+.related-info span {
+    display: block;
+    margin-top: 4px;
+    color: #9a6f00;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.related-card > a {
+    color: #b58400;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.related-card > a:hover {
+    color: #07172d;
+}
+
+.site-footer {
+    padding: 60px 0 25px;
+    background: #07172d;
+    color: #ffffff;
+}
+
+.footer-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 70px;
+}
+
+.footer-brand p {
+    max-width: 350px;
+    margin-top: 18px;
+    color: #9eacbb;
+    font-size: 17px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links strong {
+    margin-bottom: 5px;
+    color: #d4af37;
+    font-size: 17px;
+}
+
+.footer-links a {
+    color: #aebac7;
+    font-size: 17px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    width: min(1180px, 92%);
+    margin: 45px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #8190a0;
+    font-size: 17px;
+}
+
+@media (max-width: 1050px) {
+    .desktop-nav {
+        gap: 16px;
+    }
+
+    .desktop-nav a {
+        font-size: 17px;
+    }
+
+    .job-details-layout {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 25px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .related-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-container {
+        min-height: 72px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .job-hero {
+        padding: 50px 0 55px;
+    }
+
+    .job-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .job-details-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .job-sidebar {
+        position: static;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-card:last-child {
+        grid-column: auto;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-text strong {
+        font-size: 18px;
+    }
+
+    .brand-text span {
+        font-size: 18px;
+    }
+
+    .brand-mark {
+        width: 42px;
+        height: 42px;
+    }
+
+    .job-hero {
+        padding: 45px 0 50px;
+    }
+
+    .job-title-area h1 {
+        font-size: 46px;
+    }
+
+    .job-title-area p {
+        font-size: 20px;
+    }
+
+    .company-logo {
+        width: 72px;
+        height: 72px;
+        font-size: 20px;
+    }
+
+    .job-details-section {
+        padding: 50px 0;
+    }
+
+    .details-card {
+        padding: 23px;
+    }
+
+    .details-card h2 {
+        font-size: 36px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card,
+    .company-card,
+    .apply-card {
+        padding: 23px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .job-title-area h1 {
+        font-size: 46px;
+    }
+
+    .job-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .related-card {
+        grid-template-columns: auto 1fr;
+    }
+
+    .related-card > a {
+        grid-column: 2;
+    }
+}

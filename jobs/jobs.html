@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find jobs and work opportunities on SJH Consult.">
+    <title>Find Jobs | SJH Consult</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="jobs.css">
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../redesign.css">
+</head>
+
+<body>
+
+<header class="sjh-shared-header">
+    <div class="sjh-header-container">
+        <a href="../index.html" class="sjh-brand">
+            <span class="sjh-brand-mark">SJH</span>
+            <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+        </a>
+        <nav class="sjh-desktop-nav">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="jobs.html" class="active">Jobs</a>
+            <a href="../Professionals/professionals.html">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+            <a href="../index.html#request-workers" class="sjh-request-nav">Need Workers?</a>
+            <a href="../index.html#request-workers" class="sjh-request-nav">Need Workers?</a>
+        <a href="../auth/login.html">Login</a>
+            <a href="../auth/create-account.html" class="sjh-create">Create Account</a>
+        </nav>
+        <button class="sjh-menu-toggle" id="sjhMenuToggle" aria-label="Open navigation menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="sjh-mobile-menu" id="sjhMobileMenu">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="jobs.html" class="active">Jobs</a>
+            <a href="../Professionals/professionals.html">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+        <a href="../auth/login.html">Login</a>
+        <a href="../auth/create-account.html" class="sjh-create">Create Account</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <section class="jobs-hero">
+
+        <div class="jobs-container">
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    SJH JOB MARKETPLACE
+                </div>
+
+                <h1>
+                    Find work.
+                    <span>Build your future.</span>
+                </h1>
+
+                <p>
+                    Discover job opportunities, freelance work and
+                    professional opportunities from employers and
+                    organizations.
+                </p>
+
+            </div>
+
+            <div class="job-search-box">
+
+                <div class="search-field">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="jobSearch"
+                        placeholder="Job title, skill or keyword"
+                    >
+
+                </div>
+
+                <div class="location-field">
+
+                    <span class="location-icon">
+                        ⌖
+                    </span>
+
+                    <input
+                        type="text"
+                        id="locationSearch"
+                        placeholder="Location"
+                    >
+
+                </div>
+
+                <button
+                    type="button"
+                    class="search-button"
+                    id="searchButton"
+                >
+                    Search Jobs
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="jobs-section">
+
+        <div class="jobs-container">
+
+            <div class="jobs-layout">
+
+                <aside class="jobs-filter">
+
+                    <div class="filter-header">
+
+                        <h2>
+                            Filters
+                        </h2>
+
+                        <button
+                            type="button"
+                            id="clearFilters"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <h2>
+                            Job Type
+                        </h2>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Full Time"
+                                class="job-type-filter"
+                            >
+                            <span>Full Time</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Part Time"
+                                class="job-type-filter"
+                            >
+                            <span>Part Time</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Contract"
+                                class="job-type-filter"
+                            >
+                            <span>Contract</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Freelance"
+                                class="job-type-filter"
+                            >
+                            <span>Freelance</span>
+                        </label>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <h2>
+                            Experience
+                        </h2>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Entry Level"
+                                class="experience-filter"
+                            >
+                            <span>Entry Level</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Mid Level"
+                                class="experience-filter"
+                            >
+                            <span>Mid Level</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Senior Level"
+                                class="experience-filter"
+                            >
+                            <span>Senior Level</span>
+                        </label>
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <h2>
+                            Category
+                        </h2>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Technology"
+                                class="category-filter"
+                            >
+                            <span>Technology</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Design"
+                                class="category-filter"
+                            >
+                            <span>Design</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Construction"
+                                class="category-filter"
+                            >
+                            <span>Construction</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Marketing"
+                                class="category-filter"
+                            >
+                            <span>Marketing</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input
+                                type="checkbox"
+                                value="Administrative"
+                                class="category-filter"
+                            >
+                            <span>Administrative</span>
+                        </label>
+
+                    </div>
+
+                </aside>
+
+                <div class="jobs-content">
+
+                    <div class="jobs-heading">
+
+                        <div>
+
+                            <div class="section-label">
+                                OPPORTUNITIES
+                            </div>
+
+                            <h2>
+                                Latest job opportunities
+                            </h2>
+
+                        </div>
+
+                        <div class="jobs-count">
+                            <strong id="jobCount">
+                                6
+                            </strong>
+
+                            <span>
+                                jobs available
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="jobs-grid" id="jobsGrid">
+
+                        <article
+                            class="job-card"
+                            data-title="Frontend Developer"
+                            data-location="Lagos"
+                            data-type="Full Time"
+                            data-experience="Mid Level"
+                            data-category="Technology"
+                        >
+
+                            <div class="job-card-top">
+
+                                <div class="company-logo">
+                                    TC
+                                </div>
+
+                                <span class="job-badge">
+                                    Featured
+                                </span>
+
+                            </div>
+
+                            <div class="job-info">
+
+                                <h2>
+                                    Frontend Developer
+                                </h2>
+
+                                <h4>
+                                    Technology Company
+                                </h4>
+
+                                <div class="job-meta">
+
+                                    <span>
+                                        ⌖ Lagos
+                                    </span>
+
+                                    <span>
+                                        Full Time
+                                    </span>
+
+                                </div>
+
+                                <p>
+                                    We are looking for a skilled frontend
+                                    developer to build and maintain modern
+                                    web applications.
+                                </p>
+
+                            </div>
+
+                            <div class="job-bottom">
+
+                                <div class="salary">
+                                    ₦250,000
+                                    <span>/ month</span>
+                                </div>
+
+                                <a
+                                    href="job-details.html?id=1"
+                                    class="view-job"
+                                >
+                                    View Job
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="job-card"
+                            data-title="Graphic Designer"
+                            data-location="Port Harcourt"
+                            data-type="Contract"
+                            data-experience="Entry Level"
+                            data-category="Design"
+                        >
+
+                            <div class="job-card-top">
+
+                                <div class="company-logo">
+                                    CR
+                                </div>
+
+                            </div>
+
+                            <div class="job-info">
+
+                                <h2>
+                                    Graphic Designer
+                                </h2>
+
+                                <h4>
+                                    Creative Agency
+                                </h4>
+
+                                <div class="job-meta">
+
+                                    <span>
+                                        ⌖ Port Harcourt
+                                    </span>
+
+                                    <span>
+                                        Contract
+                                    </span>
+
+                                </div>
+
+                                <p>
+                                    Create visual content for brands,
+                                    social media campaigns and marketing
+                                    materials.
+                                </p>
+
+                            </div>
+
+                            <div class="job-bottom">
+
+                                <div class="salary">
+                                    ₦150,000
+                                    <span>/ month</span>
+                                </div>
+
+                                <a
+                                    href="job-details.html?id=2"
+                                    class="view-job"
+                                >
+                                    View Job
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="job-card"
+                            data-title="Marketing Specialist"
+                            data-location="Abuja"
+                            data-type="Full Time"
+                            data-experience="Mid Level"
+                            data-category="Marketing"
+                        >
+
+                            <div class="job-card-top">
+
+                                <div class="company-logo">
+                                    MS
+                                </div>
+
+                                <span class="job-badge">
+                                    New
+                                </span>
+
+                            </div>
+
+                            <div class="job-info">
+
+                                <h2>
+                                    Marketing Specialist
+                                </h2>
+
+                                <h4>
+                                    Marketing Solutions
+                                </h4>
+
+                                <div class="job-meta">
+
+                                    <span>
+                                        ⌖ Abuja
+                                    </span>
+
+                                    <span>
+                                        Full Time
+                                    </span>
+
+                                </div>
+
+                                <p>
+                                    Help develop marketing campaigns and
+                                    grow our online and offline customer
+                                    base.
+                                </p>
+
+                            </div>
+
+                            <div class="job-bottom">
+
+                                <div class="salary">
+                                    ₦220,000
+                                    <span>/ month</span>
+                                </div>
+
+                                <a
+                                    href="job-details.html?id=3"
+                                    class="view-job"
+                                >
+                                    View Job
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="job-card"
+                            data-title="Professional Carpenter"
+                            data-location="Port Harcourt"
+                            data-type="Freelance"
+                            data-experience="Senior Level"
+                            data-category="Construction"
+                        >
+
+                            <div class="job-card-top">
+
+                                <div class="company-logo">
+                                    HC
+                                </div>
+
+                            </div>
+
+                            <div class="job-info">
+
+                                <h2>
+                                    Professional Carpenter
+                                </h2>
+
+                                <h4>
+                                    Home Construction
+                                </h4>
+
+                                <div class="job-meta">
+
+                                    <span>
+                                        ⌖ Port Harcourt
+                                    </span>
+
+                                    <span>
+                                        Freelance
+                                    </span>
+
+                                </div>
+
+                                <p>
+                                    Experienced carpenter needed for
+                                    residential furniture and interior
+                                    woodwork projects.
+                                </p>
+
+                            </div>
+
+                            <div class="job-bottom">
+
+                                <div class="salary">
+                                    ₦80,000
+                                    <span>/ project</span>
+                                </div>
+
+                                <a
+                                    href="job-details.html?id=4"
+                                    class="view-job"
+                                >
+                                    View Job
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="job-card"
+                            data-title="Administrative Assistant"
+                            data-location="Enugu"
+                            data-type="Part Time"
+                            data-experience="Entry Level"
+                            data-category="Administrative"
+                        >
+
+                            <div class="job-card-top">
+
+                                <div class="company-logo">
+                                    BA
+                                </div>
+
+                            </div>
+
+                            <div class="job-info">
+
+                                <h2>
+                                    Administrative Assistant
+                                </h2>
+
+                                <h4>
+                                    Business Associates
+                                </h4>
+
+                                <div class="job-meta">
+
+                                    <span>
+                                        ⌖ Enugu
+                                    </span>
+
+                                    <span>
+                                        Part Time
+                                    </span>
+
+                                </div>
+
+                                <p>
+                                    Assist with daily administrative tasks,
+                                    communication and basic office duties.
+                                </p>
+
+                            </div>
+
+                            <div class="job-bottom">
+
+                                <div class="salary">
+                                    ₦100,000
+                                    <span>/ month</span>
+                                </div>
+
+                                <a
+                                    href="job-details.html?id=5"
+                                    class="view-job"
+                                >
+                                    View Job
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                        <article
+                            class="job-card"
+                            data-title="Web Designer"
+                            data-location="Lagos"
+                            data-type="Freelance"
+                            data-experience="Mid Level"
+                            data-category="Technology"
+                        >
+
+                            <div class="job-card-top">
+
+                                <div class="company-logo">
+                                    DS
+                                </div>
+
+                            </div>
+
+                            <div class="job-info">
+
+                                <h2>
+                                    Web Designer
+                                </h2>
+
+                                <h4>
+                                    Digital Studio
+                                </h4>
+
+                                <div class="job-meta">
+
+                                    <span>
+                                        ⌖ Lagos
+                                    </span>
+
+                                    <span>
+                                        Freelance
+                                    </span>
+
+                                </div>
+
+                                <p>
+                                    Design responsive websites and landing
+                                    pages for growing businesses.
+                                </p>
+
+                            </div>
+
+                            <div class="job-bottom">
+
+                                <div class="salary">
+                                    ₦120,000
+                                    <span>/ project</span>
+                                </div>
+
+                                <a
+                                    href="job-details.html?id=6"
+                                    class="view-job"
+                                >
+                                    View Job
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <div
+                        class="no-jobs"
+                        id="noJobs"
+                    >
+
+                        <div class="no-jobs-icon">
+                            ⌕
+                        </div>
+
+                        <h2>
+                            No jobs found
+                        </h2>
+
+                        <p>
+                            Try changing your search or filters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="jobs-cta">
+
+        <div class="jobs-container">
+
+            <div class="cta-card">
+
+                <div>
+
+                    <div class="section-label">
+                        LOOKING FOR PROFESSIONALS?
+                    </div>
+
+                    <h2>
+                        Need someone to do the job?
+                    </h2>
+
+                    <p>
+                        Find skilled professionals on SJH Consult
+                        and connect with someone who can handle your
+                        project.
+                    </p>
+
+                </div>
+
+                <a
+                    href="../Professionals/professionals.html"
+                    class="cta-button"
+                >
+                    Find a Professional
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="jobs.js"></script>
+<footer class="sjh-shared-footer">
+    <div class="sjh-footer-container">
+        <div class="sjh-footer-brand">
+            <a href="../index.html" class="sjh-brand">
+                <span class="sjh-brand-mark">SJH</span>
+                <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+            </a>
+            <p>Connecting people, professionals and opportunities through trusted services and career support.</p>
+        </div>
+        <div class="sjh-footer-links">
+            <div><h2>Explore</h2><a href="../index.html">Home</a><a href="../about/about.html">About Us</a><a href="../services/services.html">Services</a><a href="../training/training.html">Training</a></div>
+            <div><h2>Opportunities</h2><a href="jobs.html">Jobs</a><a href="../Professionals/professionals.html">Professionals</a><a href="../services/cv-review.html">CV Review</a><a href="../contact/contact.html">Contact Us</a></div>
+            <div><h2>Account</h2><a href="../auth/login.html">Login</a><a href="../auth/create-account.html">Create Account</a></div>
+        </div>
+    </div>
+    <div class="sjh-footer-bottom"><span>&copy; 2026 SJH Consult. All rights reserved.</span><span>Professional Services</span></div>
+</footer>
+    <script src="../shared.js"></script>
+</body>
+</html>

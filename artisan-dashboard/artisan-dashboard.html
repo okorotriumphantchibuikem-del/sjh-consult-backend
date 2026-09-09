@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SJH Consult Artisan Dashboard"
+    >
+
+    <title>Artisan Dashboard | SJH Consult</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="artisan-dashboard.css">
+</head>
+
+<body data-account-type="artisan">
+
+<div class="dashboard-wrapper">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="../index.html" class="sidebar-brand">
+                <div class="brand-mark">SJH</div>
+
+                <div class="brand-text">
+                    <strong>SJH Consult</strong>
+                    <span>PROFESSIONAL SERVICES</span>
+                </div>
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close sidebar"
+            >
+                ×
+            </button>
+
+            <div class="profile-mini">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-mini-info">
+                    <strong id="sidebarUserName">Artisan User</strong>
+                    <span id="sidebarProfession">Professional</span>
+                </div>
+
+            </div>
+
+            <nav class="dashboard-nav">
+
+                <div class="nav-section-title">
+                    MAIN
+                </div>
+
+                <a href="#overview" class="nav-link active" data-section="overview">
+                    <span class="nav-icon">⌂</span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="#profile" class="nav-link" data-section="profile">
+                    <span class="nav-icon">◉</span>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="#services" class="nav-link" data-section="services">
+                    <span class="nav-icon">▣</span>
+                    <span>My Services</span>
+                </a>
+
+                <a href="#jobs" class="nav-link" data-section="jobs">
+                    <span class="nav-icon">▤</span>
+                    <span>Find Jobs</span>
+                </a>
+
+                <a href="#applications" class="nav-link" data-section="applications">
+                    <span class="nav-icon">✓</span>
+                    <span>Applications</span>
+                    <span class="nav-count">3</span>
+                </a>
+
+                <div class="nav-section-title">
+                    PROFESSIONAL
+                </div>
+
+                <a href="#portfolio" class="nav-link" data-section="portfolio">
+                    <span class="nav-icon">▧</span>
+                    <span>Portfolio</span>
+                </a>
+
+                <a href="#messages" class="nav-link" data-section="messages">
+                    <span class="nav-icon">✉</span>
+                    <span>Messages</span>
+                    <span class="nav-count">2</span>
+                </a>
+
+                <a href="#notifications" class="nav-link" data-section="notifications">
+                    <span class="nav-icon">♢</span>
+                    <span>Notifications</span>
+                    <span class="nav-count">4</span>
+                </a>
+
+                <div class="nav-section-title">
+                    ACCOUNT
+                </div>
+
+                <a href="#payments" class="nav-link" data-section="payments">
+                    <span class="nav-icon">₦</span>
+                    <span>Payments</span>
+                </a>
+
+                <a href="#settings" class="nav-link" data-section="settings">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="back-home">
+                <span>←</span>
+                Back to Website
+            </a>
+
+            <button type="button" class="logout-btn" id="logoutBtn">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <div class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open sidebar"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="header-title">
+
+                <span class="header-label">ARTISAN PORTAL</span>
+
+                <h1 id="pageTitle">
+                    Overview
+                </h1>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="header-icon notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    ♢
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="header-profile">
+
+                    <div class="header-avatar" id="headerAvatar">
+                        A
+                    </div>
+
+                    <div class="header-profile-info">
+                        <strong id="headerUserName">
+                            Artisan User
+                        </strong>
+
+                        <span id="headerProfession">
+                            Professional
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="dashboard-content">
+
+            <section class="dashboard-section active-section" id="overview">
+
+                <div class="welcome-banner">
+
+                    <div class="welcome-text">
+
+                        <span class="welcome-label">
+                            WELCOME BACK
+                        </span>
+
+                        <h2>
+                            Hello, <span id="welcomeName">Artisan</span>.
+                        </h2>
+
+                        <p>
+                            Manage your professional profile, services,
+                            applications and opportunities from your dashboard.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            data-target="profile"
+                        >
+                            Complete Profile
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                    <div class="welcome-decoration">
+                        <div class="decoration-circle"></div>
+                        <div class="decoration-ring"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ▣
+                        </div>
+
+                        <div class="stat-content">
+                            <span>Active Services</span>
+                            <strong id="serviceCount">4</strong>
+                        </div>
+
+                        <span class="stat-change positive">
+                            +1 this month
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ▤
+                        </div>
+
+                        <div class="stat-content">
+                            <span>Applications</span>
+                            <strong id="applicationCount">3</strong>
+                        </div>
+
+                        <span class="stat-change">
+                            1 pending
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ₦
+                        </div>
+
+                        <div class="stat-content">
+                            <span>Total Earnings</span>
+                            <strong id="earningCount">₦185k</strong>
+                        </div>
+
+                        <span class="stat-change positive">
+                            +18.4%
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ★
+                        </div>
+
+                        <div class="stat-content">
+                            <span>Profile Rating</span>
+                            <strong>4.8</strong>
+                        </div>
+
+                        <span class="stat-change">
+                            27 reviews
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+                    <div class="dashboard-card profile-progress-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-label">
+                                    PROFILE
+                                </span>
+
+                                <h3>
+                                    Complete your profile
+                                </h3>
+                            </div>
+
+                            <strong class="completion-number">
+                                72%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <span style="width: 72%;"></span>
+                        </div>
+
+                        <p class="card-description">
+                            A complete profile helps clients and employers
+                            discover you more easily.
+                        </p>
+
+                        <div class="profile-tasks">
+
+                            <div class="profile-task completed">
+                                <span>✓</span>
+                                <div>
+                                    <strong>Basic information</strong>
+                                    <small>Completed</small>
+                                </div>
+                            </div>
+
+                            <div class="profile-task completed">
+                                <span>✓</span>
+                                <div>
+                                    <strong>Professional details</strong>
+                                    <small>Completed</small>
+                                </div>
+                            </div>
+
+                            <div class="profile-task">
+                                <span>+</span>
+                                <div>
+                                    <strong>Add portfolio</strong>
+                                    <small>Recommended</small>
+                                </div>
+                            </div>
+
+                            <div class="profile-task">
+                                <span>+</span>
+                                <div>
+                                    <strong>Add profile photo</strong>
+                                    <small>Recommended</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            data-target="profile"
+                        >
+                            Improve Profile
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-card activity-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-label">
+                                    ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Recent activity
+                                </h3>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="text-button"
+                                data-target="notifications"
+                            >
+                                View all
+                            </button>
+
+                        </div>
+
+                        <div class="activity-list">
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    ✓
+                                </div>
+
+                                <div class="activity-details">
+                                    <strong>
+                                        Application submitted
+                                    </strong>
+
+                                    <p>
+                                        Electrician Technician
+                                    </p>
+
+                                    <small>
+                                        2 hours ago
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    ★
+                                </div>
+
+                                <div class="activity-details">
+                                    <strong>
+                                        New profile review
+                                    </strong>
+
+                                    <p>
+                                        Your profile received 5 stars
+                                    </p>
+
+                                    <small>
+                                        Yesterday
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    ₦
+                                </div>
+
+                                <div class="activity-details">
+                                    <strong>
+                                        Payment received
+                                    </strong>
+
+                                    <p>
+                                        Service payment confirmed
+                                    </p>
+
+                                    <small>
+                                        2 days ago
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon">
+                                    ▣
+                                </div>
+
+                                <div class="activity-details">
+                                    <strong>
+                                        Service updated
+                                    </strong>
+
+                                    <p>
+                                        Electrical installation
+                                    </p>
+
+                                    <small>
+                                        3 days ago
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card jobs-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="card-label">
+                                OPPORTUNITIES
+                            </span>
+
+                            <h3>
+                                Recommended jobs
+                            </h3>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="text-button"
+                            data-target="jobs"
+                        >
+                            View all jobs
+                        </button>
+
+                    </div>
+
+
+                    <div class="jobs-list">
+
+                        <div class="job-item">
+
+                            <div class="job-company-icon">
+                                SJ
+                            </div>
+
+                            <div class="job-details">
+
+                                <h4>
+                                    Residential Electrical Installation
+                                </h4>
+
+                                <p>
+                                    Port Harcourt · Contract
+                                </p>
+
+                                <div class="job-tags">
+                                    <span>Electrical</span>
+                                    <span>Installation</span>
+                                </div>
+
+                            </div>
+
+                            <div class="job-price">
+                                <strong>₦120,000</strong>
+                                <small>Posted today</small>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="apply-button"
+                            >
+                                Apply
+                            </button>
+
+                        </div>
+
+
+                        <div class="job-item">
+
+                            <div class="job-company-icon">
+                                HC
+                            </div>
+
+                            <div class="job-details">
+
+                                <h4>
+                                    Commercial Wiring Project
+                                </h4>
+
+                                <p>
+                                    Port Harcourt · Project
+                                </p>
+
+                                <div class="job-tags">
+                                    <span>Electrical</span>
+                                    <span>Commercial</span>
+                                </div>
+
+                            </div>
+
+                            <div class="job-price">
+                                <strong>₦200,000</strong>
+                                <small>Posted yesterday</small>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="apply-button"
+                            >
+                                Apply
+                            </button>
+
+                        </div>
+
+
+                        <div class="job-item">
+
+                            <div class="job-company-icon">
+                                PS
+                            </div>
+
+                            <div class="job-details">
+
+                                <h4>
+                                    Maintenance Technician
+                                </h4>
+
+                                <p>
+                                    Rivers State · Full-time
+                                </p>
+
+                                <div class="job-tags">
+                                    <span>Maintenance</span>
+                                    <span>Technical</span>
+                                </div>
+
+                            </div>
+
+                            <div class="job-price">
+                                <strong>₦150,000</strong>
+                                <small>Posted 2 days ago</small>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="apply-button"
+                            >
+                                Apply
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="profile">
+
+                <div class="section-page-header">
+                    <div>
+                        <span class="card-label">ACCOUNT</span>
+                        <h2>My Profile</h2>
+                        <p>Manage your professional information.</p>
+                    </div>
+
+                    <button type="button" class="primary-button">
+                        Save Changes
+                    </button>
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="profile-cover">
+                        <div class="large-profile-avatar" id="profileAvatar">
+                            A
+                        </div>
+                    </div>
+
+                    <div class="profile-form">
+
+                        <div class="form-section-title">
+                            Personal Information
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input
+                                    type="text"
+                                    id="profileFullName"
+                                    placeholder="Your full name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="profilePhone"
+                                    placeholder="Phone number"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input
+                                    type="email"
+                                    id="profileEmail"
+                                    placeholder="Email address"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input
+                                    type="text"
+                                    id="profileLocation"
+                                    placeholder="Your location"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-section-title">
+                            Professional Information
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Profession</label>
+                                <input
+                                    type="text"
+                                    id="profileProfession"
+                                    placeholder="Your profession"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label>Years of Experience</label>
+                                <select id="profileExperience">
+                                    <option value="">Select experience</option>
+                                    <option>Less than 1 year</option>
+                                    <option>1 - 2 years</option>
+                                    <option>3 - 5 years</option>
+                                    <option>6 - 10 years</option>
+                                    <option>10+ years</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label>Main Skill</label>
+                                <input
+                                    type="text"
+                                    id="profileSkill"
+                                    placeholder="Your main professional skill"
+                                >
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label>About You</label>
+                                <textarea
+                                    id="profileBio"
+                                    rows="5"
+                                    placeholder="Tell clients about your experience and services..."
+                                ></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="services">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">PROFESSIONAL</span>
+                        <h2>My Services</h2>
+                        <p>Manage the services you offer to clients.</p>
+                    </div>
+
+                    <button type="button" class="primary-button">
+                        + Add Service
+                    </button>
+
+                </div>
+
+                <div class="service-grid">
+
+                    <div class="service-card">
+                        <div class="service-card-icon">⚡</div>
+                        <span class="service-status">Active</span>
+                        <h3>Electrical Installation</h3>
+                        <p>
+                            Residential and commercial electrical installation services.
+                        </p>
+                        <div class="service-footer">
+                            <strong>From ₦30,000</strong>
+                            <button type="button">Manage</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-icon">🔧</div>
+                        <span class="service-status">Active</span>
+                        <h3>Electrical Repairs</h3>
+                        <p>
+                            Electrical fault diagnosis, repairs and maintenance.
+                        </p>
+                        <div class="service-footer">
+                            <strong>From ₦15,000</strong>
+                            <button type="button">Manage</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-card-icon">🏠</div>
+                        <span class="service-status">Active</span>
+                        <h3>House Wiring</h3>
+                        <p>
+                            Complete house wiring and electrical setup.
+                        </p>
+                        <div class="service-footer">
+                            <strong>From ₦80,000</strong>
+                            <button type="button">Manage</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="jobs">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">OPPORTUNITIES</span>
+                        <h2>Find Jobs</h2>
+                        <p>Discover jobs that match your professional skills.</p>
+                    </div>
+
+                </div>
+
+                <div class="job-search">
+
+                    <input
+                        type="search"
+                        id="jobSearch"
+                        placeholder="Search jobs, skills or companies..."
+                    >
+
+                    <select id="jobLocation">
+                        <option value="">All Locations</option>
+                        <option>Port Harcourt</option>
+                        <option>Lagos</option>
+                        <option>Abuja</option>
+                        <option>Rivers State</option>
+                    </select>
+
+                    <button type="button" class="primary-button">
+                        Search
+                    </button>
+
+                </div>
+
+                <div class="dashboard-card jobs-page-list">
+
+                    <div class="job-item">
+                        <div class="job-company-icon">SJ</div>
+
+                        <div class="job-details">
+                            <h4>Residential Electrical Installation</h4>
+                            <p>Port Harcourt · Contract</p>
+                            <div class="job-tags">
+                                <span>Electrical</span>
+                                <span>Installation</span>
+                            </div>
+                        </div>
+
+                        <div class="job-price">
+                            <strong>₦120,000</strong>
+                            <small>Posted today</small>
+                        </div>
+
+                        <button type="button" class="apply-button">
+                            Apply
+                        </button>
+                    </div>
+
+                    <div class="job-item">
+                        <div class="job-company-icon">HC</div>
+
+                        <div class="job-details">
+                            <h4>Commercial Wiring Project</h4>
+                            <p>Port Harcourt · Project</p>
+                            <div class="job-tags">
+                                <span>Electrical</span>
+                                <span>Commercial</span>
+                            </div>
+                        </div>
+
+                        <div class="job-price">
+                            <strong>₦200,000</strong>
+                            <small>Posted yesterday</small>
+                        </div>
+
+                        <button type="button" class="apply-button">
+                            Apply
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="applications">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">WORK</span>
+                        <h2>Applications</h2>
+                        <p>Track the jobs you have applied for.</p>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card table-card">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Job</th>
+                                    <th>Company</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Electrical Technician</td>
+                                    <td>SJH Engineering</td>
+                                    <td>Sep 2, 2026</td>
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Commercial Wiring</td>
+                                    <td>HC Properties</td>
+                                    <td>Aug 30, 2026</td>
+                                    <td>
+                                        <span class="status review">
+                                            Under Review
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Maintenance Technician</td>
+                                    <td>Prime Services</td>
+                                    <td>Aug 28, 2026</td>
+                                    <td>
+                                        <span class="status accepted">
+                                            Accepted
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="portfolio">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">SHOWCASE</span>
+                        <h2>Portfolio</h2>
+                        <p>Show clients the quality of your previous work.</p>
+                    </div>
+
+                    <button type="button" class="primary-button">
+                        + Add Work
+                    </button>
+
+                </div>
+
+                <div class="portfolio-grid">
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            Electrical Project
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Residential Wiring</h3>
+                            <p>Complete residential electrical installation.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            Commercial Project
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Commercial Installation</h3>
+                            <p>Electrical installation for commercial property.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card add-portfolio">
+                        <span>+</span>
+                        <strong>Add your work</strong>
+                        <small>Upload photos of your projects</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="messages">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">COMMUNICATION</span>
+                        <h2>Messages</h2>
+                        <p>Communicate with clients and employers.</p>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card messages-card">
+
+                    <div class="message-item unread">
+
+                        <div class="message-avatar">
+                            HC
+                        </div>
+
+                        <div class="message-content">
+                            <strong>HC Properties</strong>
+                            <p>
+                                We would like to discuss your application...
+                            </p>
+                        </div>
+
+                        <small>
+                            10 min ago
+                        </small>
+
+                    </div>
+
+                    <div class="message-item unread">
+
+                        <div class="message-avatar">
+                            PS
+                        </div>
+
+                        <div class="message-content">
+                            <strong>Prime Services</strong>
+                            <p>
+                                Your application has been reviewed.
+                            </p>
+                        </div>
+
+                        <small>
+                            Yesterday
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="notifications">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">UPDATES</span>
+                        <h2>Notifications</h2>
+                        <p>Stay updated with your account activity.</p>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card notifications-card">
+
+                    <div class="notification-item unread">
+                        <div class="notification-icon">✓</div>
+                        <div>
+                            <strong>Application update</strong>
+                            <p>Your application for Commercial Wiring is under review.</p>
+                            <small>1 hour ago</small>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="notification-icon">★</div>
+                        <div>
+                            <strong>New review</strong>
+                            <p>A client gave your professional profile a 5-star rating.</p>
+                            <small>Yesterday</small>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="notification-icon">₦</div>
+                        <div>
+                            <strong>Payment received</strong>
+                            <p>You received a payment for Electrical Installation.</p>
+                            <small>2 days ago</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="payments">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">FINANCE</span>
+                        <h2>Payments</h2>
+                        <p>View your earnings and payment history.</p>
+                    </div>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">₦</div>
+                        <div class="stat-content">
+                            <span>Total Earnings</span>
+                            <strong>₦185,000</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">◷</div>
+                        <div class="stat-content">
+                            <span>Pending</span>
+                            <strong>₦45,000</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✓</div>
+                        <div class="stat-content">
+                            <span>Completed Jobs</span>
+                            <strong>8</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card table-card">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Electrical Installation</td>
+                                    <td>Sep 1, 2026</td>
+                                    <td>₦80,000</td>
+                                    <td>
+                                        <span class="status accepted">
+                                            Paid
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Electrical Repair</td>
+                                    <td>Aug 25, 2026</td>
+                                    <td>₦35,000</td>
+                                    <td>
+                                        <span class="status accepted">
+                                            Paid
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="dashboard-section" id="settings">
+
+                <div class="section-page-header">
+
+                    <div>
+                        <span class="card-label">ACCOUNT</span>
+                        <h2>Settings</h2>
+                        <p>Manage your account preferences.</p>
+                    </div>
+
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="dashboard-card settings-card">
+
+                        <h3>Account Settings</h3>
+
+                        <div class="setting-row">
+                            <div>
+                                <strong>Email notifications</strong>
+                                <p>Receive important updates by email.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <strong>Job alerts</strong>
+                                <p>Receive notifications about matching jobs.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-card settings-card">
+
+                        <h3>Security</h3>
+
+                        <button type="button" class="settings-action">
+                            Change Password
+                            <span>→</span>
+                        </button>
+
+                        <button type="button" class="settings-action">
+                            Login Activity
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="../auth/auth-config.js"></script>
+<script src="../auth/auth-guard.js"></script>
+<script src="artisan-dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | SJH Consult</title>
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../redesign.css">
+<link rel="stylesheet" href="../portal.css">
+</head>
+
+<body>
+
+    <div class="profile-page">
+
+        <header class="profile-header">
+
+            <div>
+                <span>MY ACCOUNT</span>
+                <h1>My Profile</h1>
+                <p>Manage your personal and professional information.</p>
+            </div>
+
+            <a href="dashboard.html" class="back-button">
+                ← Back to Dashboard
+            </a>
+
+        </header>
+
+
+        <main class="profile-content">
+
+            <section class="profile-card profile-summary">
+
+                <div class="profile-avatar">
+                    U
+                </div>
+
+                <div class="profile-summary-text">
+                    <h2>User Name</h2>
+                    <p>user@example.com</p>
+                    <span>SJH Consult Member</span>
+                </div>
+
+                <div class="profile-status">
+                    <span>ACCOUNT STATUS</span>
+                    <strong>Active</strong>
+                </div>
+
+            </section>
+
+
+            <section class="profile-card">
+
+                <div class="profile-section-heading">
+                    <span>PERSONAL INFORMATION</span>
+                    <h2>Your Details</h2>
+                    <p>Keep your personal information up to date.</p>
+                </div>
+
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                value="User Name"
+                                placeholder="Enter your full name"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value="user@example.com"
+                                placeholder="Enter your email"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="City, State"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="profession">Occupation</label>
+                            <input
+                                type="text"
+                                id="profession"
+                                name="profession"
+                                placeholder="Enter your occupation"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+
+                            <select id="experience" name="experience">
+                                <option value="">Select experience</option>
+                                <option value="0">No experience</option>
+                                <option value="1-2">1 - 2 years</option>
+                                <option value="3-5">3 - 5 years</option>
+                                <option value="6-10">6 - 10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="careerField">Career Field</label>
+                            <input type="text" id="careerField" name="careerField" placeholder="Technology, Construction, Finance, etc.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle">Target Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle" placeholder="Your preferred job title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skill">Skills</label>
+                            <input type="text" id="skill" name="skill" placeholder="e.g. Plumbing, JavaScript, Accounting">
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="education">Education & Qualifications</label>
+                        <textarea id="education" name="education" rows="3" placeholder="Degrees, certifications, apprenticeships or other qualifications"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="careerInterest">Career Interests</label>
+                        <input type="text" id="careerInterest" name="careerInterest" placeholder="What roles, industries or opportunities interest you?">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="bio">Professional Bio</label>
+
+                        <textarea
+                            id="bio"
+                            name="bio"
+                            rows="5"
+                            placeholder="Tell us a little about yourself and your professional background."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button type="button" class="cancel-button" id="cancelButton">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="save-button">
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <section class="profile-card">
+
+                <div class="profile-section-heading">
+                    <span>PROFESSIONAL PROFILE</span>
+                    <h2>Career Information</h2>
+                    <p>Add information that can help SJH Consult match you with opportunities.</p>
+                </div>
+
+
+                <div class="career-grid">
+
+                    <div class="career-item">
+                        <span>SKILLS</span>
+                        <strong>Add your skills</strong>
+                        <p>Tell employers what you can do.</p>
+                    </div>
+
+
+                    <div class="career-item">
+                        <span>EDUCATION</span>
+                        <strong>Add your education</strong>
+                        <p>Include your academic qualifications.</p>
+                    </div>
+
+
+                    <div class="career-item">
+                        <span>CAREER INTEREST</span>
+                        <strong>Choose your interests</strong>
+                        <p>Help us find suitable opportunities.</p>
+                    </div>
+
+
+                    <div class="career-item">
+                        <span>CV</span>
+                        <strong>Upload your CV</strong>
+                        <p>Submit your CV for professional review.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+    <script src="profile.js"></script>
+
+<script src="../auth/auth-config.js"></script>
+<script src="../auth/auth-guard.js"></script>
+<script src="../portal.js"></script>
+</body>
+</html>

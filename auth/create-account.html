@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create your SJH Consult account as an artisan, professional or corporate worker."
+    >
+
+    <title>Create Account | SJH Consult</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="create-account.css">
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../redesign.css">
+</head>
+
+<body>
+
+    <header class="sjh-shared-header">
+        <div class="sjh-header-container">
+            <a href="../index.html" class="sjh-brand">
+                <span class="sjh-brand-mark">SJH</span>
+                <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+            </a>
+            <nav class="sjh-desktop-nav">
+                <a href="../index.html">Home</a>
+                <a href="../about/about.html">About Us</a>
+                <a href="../services/services.html">Services</a>
+                <a href="../training/training.html">Training</a>
+                <a href="../jobs/jobs.html">Jobs</a>
+                <a href="../Professionals/professionals.html">Professionals</a>
+                <a href="../contact/contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+                <a href="create-account.html" class="sjh-create">Create Account</a>
+            </nav>
+            <button class="sjh-menu-toggle" id="sjhMenuToggle" aria-label="Open navigation menu" aria-expanded="false" type="button">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav class="sjh-mobile-menu" id="sjhMobileMenu">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="../Professionals/professionals.html">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="create-account.html" class="sjh-create">Create Account</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="register-section">
+
+            <div class="register-container">
+
+                <div class="register-intro">
+
+                    <div class="section-label">
+                        JOIN SJH CONSULT
+                    </div>
+
+                    <h1>
+                        Create your
+                        <span>account.</span>
+                    </h1>
+
+                    <p>
+                        Join SJH Consult and connect with opportunities,
+                        professionals, businesses and services.
+                    </p>
+
+                    <div class="intro-points">
+
+                        <div class="intro-point">
+                            <span class="point-icon">✓</span>
+                            <div>
+                                <strong>Build your profile</strong>
+                                <p>Showcase your skills and experience.</p>
+                            </div>
+                        </div>
+
+                        <div class="intro-point">
+                            <span class="point-icon">✓</span>
+                            <div>
+                                <strong>Discover opportunities</strong>
+                                <p>Find jobs, clients and professional opportunities.</p>
+                            </div>
+                        </div>
+
+                        <div class="intro-point">
+                            <span class="point-icon">✓</span>
+                            <div>
+                                <strong>Grow professionally</strong>
+                                <p>Access training, services and career support.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="register-card">
+
+                    <div class="form-heading">
+
+                        <h2>
+                            Create an account
+                        </h2>
+
+                        <p>
+                            First, tell us how you want to use SJH Consult.
+                        </p>
+
+                    </div>
+
+
+                    <div class="account-type-section">
+
+                        <label class="field-label">
+                            I want to register as
+                        </label>
+
+
+                        <div class="account-type-options">
+
+                            <button
+                                type="button"
+                                class="account-type-card"
+                                id="artisanOption"
+                                data-account-type="artisan"
+                            >
+
+                                <div class="account-type-icon">
+                                    <span>🛠</span>
+                                </div>
+
+                                <div class="account-type-content">
+
+                                    <strong>
+                                        Artisan / Professional
+                                    </strong>
+
+                                    <p>
+                                        Showcase your skills, services and
+                                        professional experience.
+                                    </p>
+
+                                </div>
+
+                                <span class="selection-indicator">
+                                    <span></span>
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="account-type-card"
+                                id="corporateOption"
+                                data-account-type="corporate"
+                            >
+
+                                <div class="account-type-icon">
+                                    <span>💼</span>
+                                </div>
+
+                                <div class="account-type-content">
+
+                                    <strong>
+                                        Corporate Worker
+                                    </strong>
+
+                                    <p>
+                                        Find jobs, build your career profile
+                                        and connect with opportunities.
+                                    </p>
+
+                                </div>
+
+                                <span class="selection-indicator">
+                                    <span></span>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="createAccountForm"
+                        class="register-form"
+                        novalidate
+                    >
+
+                        <input
+                            type="hidden"
+                            id="accountType"
+                            name="account_type"
+                            value=""
+                        >
+
+
+                        <div
+                            class="form-message"
+                            id="formMessage"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="fullName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="full_name"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="Enter your phone number"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div
+                            class="account-specific-fields"
+                            id="accountSpecificFields"
+                        >
+
+                            <div
+                                class="form-row"
+                                id="artisanFields"
+                                hidden
+                            >
+
+                                <div class="form-group">
+
+                                    <label for="profession">
+                                        Profession
+                                    </label>
+
+                                    <select
+                                        id="profession"
+                                        name="profession"
+                                    >
+                                        <option value="">
+                                            Select your profession
+                                        </option>
+
+                                        <option value="electrician">
+                                            Electrician
+                                        </option>
+
+                                        <option value="plumber">
+                                            Plumber
+                                        </option>
+
+                                        <option value="welder">
+                                            Welder
+                                        </option>
+
+                                        <option value="mechanic">
+                                            Mechanic
+                                        </option>
+
+                                        <option value="tailor">
+                                            Tailor
+                                        </option>
+
+                                        <option value="carpenter">
+                                            Carpenter
+                                        </option>
+
+                                        <option value="hair-stylist">
+                                            Hair Stylist
+                                        </option>
+
+                                        <option value="barber">
+                                            Barber
+                                        </option>
+
+                                        <option value="makeup-artist">
+                                            Makeup Artist
+                                        </option>
+
+                                        <option value="other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="experience">
+                                        Years of Experience
+                                    </label>
+
+                                    <select
+                                        id="experience"
+                                        name="experience"
+                                    >
+                                        <option value="">
+                                            Select experience
+                                        </option>
+
+                                        <option value="less-than-1">
+                                            Less than 1 year
+                                        </option>
+
+                                        <option value="1-2">
+                                            1 - 2 years
+                                        </option>
+
+                                        <option value="3-5">
+                                            3 - 5 years
+                                        </option>
+
+                                        <option value="6-10">
+                                            6 - 10 years
+                                        </option>
+
+                                        <option value="10-plus">
+                                            10+ years
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="form-row"
+                                id="corporateFields"
+                                hidden
+                            >
+
+                                <div class="form-group">
+
+                                    <label for="careerField">
+                                        Career Field
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="careerField"
+                                        name="career_field"
+                                        placeholder="e.g. Software Engineering"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="jobTitle">
+                                        Current / Desired Job Title
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="jobTitle"
+                                        name="job_title"
+                                        placeholder="e.g. Software Engineer"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="location">
+                                        Location
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="location"
+                                        name="location"
+                                        placeholder="e.g. Port Harcourt, Rivers"
+                                    >
+
+                                </div>
+
+                                <div
+                                    class="form-group"
+                                    id="skillGroup"
+                                    hidden
+                                >
+
+                                    <label for="skill">
+                                        Main Skill
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="skill"
+                                        name="skill"
+                                        placeholder="e.g. Electrical Installation"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="form-group"
+                                id="bioGroup"
+                                hidden
+                            >
+
+                                <label for="bio">
+                                    About You
+                                </label>
+
+                                <textarea
+                                    id="bio"
+                                    name="bio"
+                                    rows="4"
+                                    placeholder="Tell clients or employers a little about yourself..."
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="password">
+                                    Password
+                                </label>
+
+                                <div class="password-field">
+
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Create a password"
+                                        autocomplete="new-password"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-target="password"
+                                        aria-label="Show password"
+                                    >
+                                        Show
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="confirmPassword">
+                                    Confirm Password
+                                </label>
+
+                                <div class="password-field">
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        name="confirm_password"
+                                        placeholder="Confirm your password"
+                                        autocomplete="new-password"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-target="confirmPassword"
+                                        aria-label="Show password"
+                                    >
+                                        Show
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="terms-row">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="terms"
+                                    name="terms"
+                                    required
+                                >
+
+                                <span>
+                                    I agree to the SJH Consult
+                                    <a href="#">
+                                        Terms of Service
+                                    </a>
+                                    and
+                                    <a href="#">
+                                        Privacy Policy
+                                    </a>.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                            id="createAccountBtn"
+                        >
+                            Create Account
+                            <span>→</span>
+                        </button>
+
+
+                        <div class="login-prompt">
+
+                            <span>
+                                Already have an account?
+                            </span>
+
+                            <a href="login.html">
+                                Login here
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="../index.html" class="brand">
+
+                    <div class="brand-mark">
+                        SJH
+                    </div>
+
+                    <div class="brand-text">
+                        <strong>SJH Consult</strong>
+                        <span>PROFESSIONAL SERVICES</span>
+                    </div>
+
+                </a>
+
+                <p>
+                    Connecting people, professionals and opportunities.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <strong>Explore</strong>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="../index.html#about">
+                        About Us
+                    </a>
+
+                    <a href="../Professionals/professionals.html">
+                        Professionals
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Services</strong>
+
+                    <a href="../services/cv-review.html">
+                        CV Services
+                    </a>
+
+                    <a href="../training/training.html">
+                        Training
+                    </a>
+
+                    <a href="../jobs/jobs.html">
+                        Jobs
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Account</strong>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="create-account.html">
+                        Create Account
+                    </a>
+
+                    <a href="../index.html#contact">
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 SJH Consult. All rights reserved.
+            </span>
+
+            <span>
+                Professional Services Platform
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="auth-config.js"></script>
+
+<script src="../shared.js"></script>
+    <script src="create-account.js"></script>
+
+</body>
+</html>

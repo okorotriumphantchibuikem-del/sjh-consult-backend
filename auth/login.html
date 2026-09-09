@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to your SJH Consult account">
+    <title>Login | SJH Consult</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../redesign.css">
+</head>
+
+<body>
+
+<header class="sjh-shared-header">
+    <div class="sjh-header-container">
+        <a href="../index.html" class="sjh-brand">
+            <span class="sjh-brand-mark">SJH</span>
+            <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+        </a>
+        <nav class="sjh-desktop-nav">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="../Professionals/professionals.html">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="create-account.html" class="sjh-create">Create Account</a>
+        </nav>
+        <button class="sjh-menu-toggle" id="sjhMenuToggle" aria-label="Open navigation menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="sjh-mobile-menu" id="sjhMobileMenu">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="../Professionals/professionals.html">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+        <a href="login.html">Login</a>
+        <a href="create-account.html" class="sjh-create">Create Account</a>
+    </nav>
+</header>
+
+
+<main class="login-page">
+
+    <section class="login-intro">
+
+        <div class="intro-badge">
+            WELCOME BACK
+        </div>
+
+        <h1>
+            Your opportunities
+            <span>start here.</span>
+        </h1>
+
+        <p>
+            Sign in to manage your professional profile, discover opportunities,
+            access training and connect with the SJH Consult community.
+        </p>
+
+        <div class="intro-highlight">
+
+            <div class="highlight-icon">
+                ✦
+            </div>
+
+            <div>
+                <strong>
+                    One account. More opportunities.
+                </strong>
+
+                <p>
+                    Manage your professional journey from one secure dashboard.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="login-card">
+
+        <div class="card-top">
+
+            <div class="card-icon">
+                SJH
+            </div>
+
+            <span>
+                ACCOUNT LOGIN
+            </span>
+
+            <h2>
+                Welcome back
+            </h2>
+
+            <p>
+                Enter your details to access your account.
+            </p>
+
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email address
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        @
+                    </span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <div class="password-label">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <a href="forgot-password.html">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ⌑
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="passwordToggle"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+            <label class="remember">
+
+                <input
+                    type="checkbox"
+                    id="remember"
+                    name="remember"
+                >
+
+                <span>
+                    Remember me
+                </span>
+
+            </label>
+
+            <div
+                id="loginMessage"
+                class="login-message"
+                role="alert"
+            ></div>
+
+            <button
+                type="submit"
+                class="login-button"
+            >
+
+                <span>
+                    Login to Account
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+            <div class="divider">
+
+                <span>
+                    OR
+                </span>
+
+            </div>
+
+            <div class="create-account">
+
+                <span>
+                    New to SJH Consult?
+                </span>
+
+                <a href="create-account.html">
+                    Create an account
+                </a>
+
+            </div>
+
+        
+            <p style="text-align:center;margin-top:18px;font-size:14px;">
+                Didn't receive the verification email?
+                <a href="verify-email.html?resend=1" id="resendVerificationLink">Resend verification</a>
+            </p>
+
+</form>
+
+    </section>
+
+</main>
+
+<script src="auth-config.js"></script>
+
+<script src="login.js"></script>
+
+<footer class="sjh-shared-footer">
+    <div class="sjh-footer-container">
+        <div class="sjh-footer-brand">
+            <a href="../index.html" class="sjh-brand">
+                <span class="sjh-brand-mark">SJH</span>
+                <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+            </a>
+            <p>Connecting people, professionals and opportunities through trusted services and career support.</p>
+        </div>
+        <div class="sjh-footer-links">
+            <div><h2>Explore</h2><a href="../index.html">Home</a><a href="../about/about.html">About Us</a><a href="../services/services.html">Services</a><a href="../training/training.html">Training</a></div>
+            <div><h2>Opportunities</h2><a href="../jobs/jobs.html">Jobs</a><a href="../Professionals/professionals.html">Professionals</a><a href="../services/cv-review.html">CV Review</a><a href="../contact/contact.html">Contact Us</a></div>
+            <div><h2>Account</h2><a href="login.html">Login</a><a href="create-account.html">Create Account</a></div>
+        </div>
+    </div>
+    <div class="sjh-footer-bottom"><span>&copy; 2026 SJH Consult. All rights reserved.</span><span>Professional Services</span></div>
+</footer>
+    <script src="../shared.js"></script>
+</body>
+</html>

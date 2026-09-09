@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appointments | SJH Consult</title>
+
+    <link rel="stylesheet" href="appointments.css">
+    <link rel="stylesheet" href="../redesign.css">
+<link rel="stylesheet" href="../portal.css">
+</head>
+
+<body>
+
+    <div class="appointments-page">
+
+        <header class="appointments-header">
+
+            <div class="header-content">
+
+                <span class="section-label">PROFESSIONAL SUPPORT</span>
+
+                <h1>Appointments</h1>
+
+                <p>
+                    Book an appointment with an SJH Consult professional
+                    for personalized career and professional guidance.
+                </p>
+
+            </div>
+
+            <a href="dashboard.html" class="back-button">
+                ← Back to Dashboard
+            </a>
+
+        </header>
+
+
+        <main class="appointments-content">
+
+            <section class="appointment-intro">
+
+                <span class="section-label">BOOK A SESSION</span>
+
+                <h2>Schedule A Professional Consultation</h2>
+
+                <p>
+                    Choose the type of consultation you need, select your
+                    preferred date and time, and submit your appointment
+                    request.
+                </p>
+
+            </section>
+
+
+            <section class="appointment-layout">
+
+                <div class="booking-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <span class="section-label">APPOINTMENT REQUEST</span>
+                            <h2>Book An Appointment</h2>
+                        </div>
+
+                        <div class="calendar-icon">
+                            CAL
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-list" style="margin-bottom:24px"></div>
+
+                    <form id="appointmentForm">
+
+                        <label for="appointmentType">
+                            Consultation Type
+                        </label>
+
+                        <select id="appointmentType" required>
+
+                            <option value="">
+                                Select consultation type
+                            </option>
+
+                            <option value="career">
+                                Career Consultation
+                            </option>
+
+                            <option value="cv">
+                                CV & Resume Consultation
+                            </option>
+
+                            <option value="interview">
+                                Interview Preparation
+                            </option>
+
+                            <option value="business">
+                                Business Consultation
+                            </option>
+
+                            <option value="professional">
+                                Professional Development
+                            </option>
+
+                        </select>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="appointmentDate">
+                                    Preferred Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="appointmentDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="appointmentTime">
+                                    Preferred Time
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="appointmentTime"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <label for="appointmentMessage">
+                            Additional Information
+                        </label>
+
+                        <textarea
+                            id="appointmentMessage"
+                            rows="5"
+                            placeholder="Briefly describe what you would like help with..."
+                        ></textarea>
+
+
+                        <button
+                            type="submit"
+                            class="submit-button"
+                        >
+                            Request Appointment
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="appointment-info">
+
+                    <div class="info-card">
+
+                        <span class="section-label">CONSULTATION</span>
+
+                        <h3>What To Expect</h3>
+
+                        <ul>
+
+                            <li>
+                                Professional one-on-one guidance
+                            </li>
+
+                            <li>
+                                Personalized recommendations
+                            </li>
+
+                            <li>
+                                Practical career advice
+                            </li>
+
+                            <li>
+                                Flexible consultation sessions
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="section-label">IMPORTANT</span>
+
+                        <h3>Appointment Requests</h3>
+
+                        <p>
+                            Your selected date and time are preferences.
+                            An SJH Consult representative will confirm the
+                            appointment after reviewing your request.
+                        </p>
+
+                    </div>
+
+
+                    <div class="availability-card">
+
+                        <span class="availability-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>Professional Support</strong>
+
+                            <p>
+                                Get guidance tailored to your career goals.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="appointments-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">YOUR REQUESTS</span>
+                        <h2>Recent Appointments</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        CAL
+                    </div>
+
+                    <h3>No Appointments Yet</h3>
+
+                    <p>
+                        Your appointment requests will appear here after
+                        you submit a booking.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div class="success-modal" id="successModal">
+
+        <div class="success-box">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Request Submitted</h2>
+
+            <p>
+                Your appointment request has been submitted successfully.
+                SJH Consult will review your request and confirm your
+                appointment.
+            </p>
+
+            <button
+                type="button"
+                class="modal-button"
+                id="modalButton"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+    <script src="appointments.js"></script>
+
+<script src="../auth/auth-config.js"></script>
+<script src="../auth/auth-guard.js"></script>
+<script src="../portal.js"></script>
+</body>
+</html>

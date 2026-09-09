@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV Review | SJH Consult</title>
+
+    <link rel="stylesheet" href="cv-review.css">
+    <link rel="stylesheet" href="../redesign.css">
+<link rel="stylesheet" href="../portal.css">
+</head>
+
+<body>
+
+    <div class="cv-page">
+
+        <header class="cv-header">
+
+            <div class="header-content">
+
+                <span class="section-label">CAREER SUPPORT</span>
+
+                <h1>CV Review</h1>
+
+                <p>
+                    Get professional feedback on your CV and improve your
+                    chances of making a strong impression with employers.
+                </p>
+
+            </div>
+
+            <a href="dashboard.html" class="back-button">
+                ← Back to Dashboard
+            </a>
+
+        </header>
+
+
+        <main class="cv-content">
+
+            <section class="cv-intro">
+
+                <span class="section-label">PROFESSIONAL CV SUPPORT</span>
+
+                <h2>Make Your CV Stand Out</h2>
+
+                <p>
+                    Upload your CV for professional review. Our career
+                    specialists can assess your document and provide useful
+                    recommendations on structure, content, formatting,
+                    and presentation.
+                </p>
+
+            </section>
+
+
+            <section class="cv-layout">
+
+                <div class="upload-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <span class="section-label">STEP 01</span>
+                            <h2>Upload Your CV</h2>
+                        </div>
+
+                        <div class="upload-icon">
+                            CV
+                        </div>
+
+                    </div>
+
+
+                    <form id="cvForm">
+
+                        <label for="cvFile">
+                            Select CV File
+                        </label>
+
+                        <div class="file-area">
+
+                            <input
+                                type="file"
+                                id="cvFile"
+                                accept=".pdf,.doc,.docx"
+                                required
+                            >
+
+                            <div class="file-message">
+
+                                <strong>Choose your CV</strong>
+
+                                <span>
+                                    PDF, DOC or DOCX files only
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <label for="reviewType">
+                            Review Type
+                        </label>
+
+                        <select id="reviewType" required>
+
+                            <option value="">
+                                Select review type
+                            </option>
+
+                            <option value="basic">
+                                Basic CV Review
+                            </option>
+
+                            <option value="professional">
+                                Professional CV Review
+                            </option>
+
+                            <option value="premium">
+                                Premium Career Review
+                            </option>
+
+                        </select>
+
+
+                        <label for="cvMessage">
+                            Additional Information
+                        </label>
+
+                        <textarea
+                            id="cvMessage"
+                            rows="5"
+                            placeholder="Tell us anything important about your CV or career goals..."
+                        ></textarea>
+
+
+                        <button type="submit" class="submit-button">
+                            Submit CV For Review
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="info-column">
+
+                    <div class="info-card">
+
+                        <span class="section-label">WHAT WE REVIEW</span>
+
+                        <h3>Professional Assessment</h3>
+
+                        <ul>
+
+                            <li>
+                                CV structure and organization
+                            </li>
+
+                            <li>
+                                Professional formatting
+                            </li>
+
+                            <li>
+                                Skills and experience presentation
+                            </li>
+
+                            <li>
+                                Grammar and clarity
+                            </li>
+
+                            <li>
+                                Overall professional appearance
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span class="section-label">BEFORE YOU UPLOAD</span>
+
+                        <h3>Prepare Your CV</h3>
+
+                        <p>
+                            Make sure your CV contains your current contact
+                            information, education, work experience, skills,
+                            and relevant professional achievements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="status-card">
+
+                        <span class="status-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>Secure Submission</strong>
+
+                            <p>
+                                Your CV will be handled securely and reviewed
+                                professionally.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="process-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">HOW IT WORKS</span>
+
+                    <h2>CV Review Process</h2>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>Upload</h3>
+
+                        <p>
+                            Submit your latest CV through the secure upload
+                            form.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>Assessment</h3>
+
+                        <p>
+                            A professional reviewer assesses your CV and
+                            identifies areas for improvement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>Feedback</h3>
+
+                        <p>
+                            Receive useful recommendations to improve your
+                            CV.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>Improve</h3>
+
+                        <p>
+                            Apply the recommendations and create a stronger
+                            professional CV.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div class="success-modal" id="successModal">
+
+        <div class="success-box">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>CV Submitted</h2>
+
+            <p>
+                Your CV has been submitted successfully for professional
+                review.
+            </p>
+
+            <button
+                type="button"
+                class="modal-button"
+                id="modalButton"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+    <script src="cv-review.js"></script>
+
+<script src="../auth/auth-config.js"></script>
+<script src="../auth/auth-guard.js"></script>
+<script src="../portal.js"></script>
+</body>
+</html>

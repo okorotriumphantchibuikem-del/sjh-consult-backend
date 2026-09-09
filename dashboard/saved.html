@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Opportunities | SJH Consult</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="saved.css">
+    <link rel="stylesheet" href="../redesign.css">
+<link rel="stylesheet" href="../portal.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>SJH Consult</h2>
+            <p>Applicant Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <span>🏠</span>
+                Dashboard
+            </a>
+
+            <a href="profile.html">
+                <span>👤</span>
+                My Profile
+            </a>
+
+            <a href="applications.html">
+                <span>📄</span>
+                Job Applications
+            </a>
+
+            <a href="training.html">
+                <span>🎓</span>
+                Training
+            </a>
+
+            <a href="cv-review.html">
+                <span>📋</span>
+                CV Review
+            </a>
+
+            <a href="appointments.html">
+                <span>📅</span>
+                Appointments
+            </a>
+
+            <a href="notifications.html">
+                <span>🔔</span>
+                Notifications
+            </a>
+
+            <a href="messages.html">
+                <span>💬</span>
+                Messages & Support
+            </a>
+
+            <a href="saved.html" class="active">
+                <span>⭐</span>
+                Saved Opportunities
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" id="logoutButton">
+                <span>🚪</span>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <button class="mobile-menu-button" id="mobileMenuButton">☰</button>
+                <h1>Saved Opportunities</h1>
+                <p>Keep track of jobs and opportunities you may want to apply for.</p>
+            </div>
+
+            <div class="header-user">
+                <div class="user-avatar">JD</div>
+                <div>
+                    <strong>John Doe</strong>
+                    <span>Applicant</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+
+            <div class="saved-top">
+                <div>
+                    <h2>Your Saved Opportunities</h2>
+                    <p>Opportunities you have saved for later.</p>
+                </div>
+
+                <a href="applications.html" class="primary-button">
+                    Find Opportunities
+                </a>
+            </div>
+
+            <div class="saved-grid">
+
+                <article class="saved-card">
+                    <div class="saved-card-top">
+                        <span class="opportunity-type">Full Time</span>
+                        <button class="remove-save" type="button" title="Remove from saved">
+                            ×
+                        </button>
+                    </div>
+
+                    <h3>Software Engineering Intern</h3>
+
+                    <p class="company-name">Technology Company</p>
+
+                    <div class="opportunity-details">
+                        <span>📍 Lagos, Nigeria</span>
+                        <span>💼 Internship</span>
+                    </div>
+
+                    <p class="opportunity-description">
+                        Gain practical software development experience while working
+                        with an experienced technology team.
+                    </p>
+
+                    <div class="saved-card-bottom">
+                        <span class="saved-date">Saved recently</span>
+                        <a href="applications.html" class="view-button">View Opportunity</a>
+                    </div>
+                </article>
+
+                <article class="saved-card">
+                    <div class="saved-card-top">
+                        <span class="opportunity-type">Full Time</span>
+                        <button class="remove-save" type="button" title="Remove from saved">
+                            ×
+                        </button>
+                    </div>
+
+                    <h3>Junior Web Developer</h3>
+
+                    <p class="company-name">Digital Solutions Ltd.</p>
+
+                    <div class="opportunity-details">
+                        <span>📍 Abuja, Nigeria</span>
+                        <span>💼 Entry Level</span>
+                    </div>
+
+                    <p class="opportunity-description">
+                        Join a growing development team and contribute to modern
+                        web applications and digital products.
+                    </p>
+
+                    <div class="saved-card-bottom">
+                        <span class="saved-date">Saved 2 days ago</span>
+                        <a href="applications.html" class="view-button">View Opportunity</a>
+                    </div>
+                </article>
+
+                <article class="saved-card">
+                    <div class="saved-card-top">
+                        <span class="opportunity-type">Remote</span>
+                        <button class="remove-save" type="button" title="Remove from saved">
+                            ×
+                        </button>
+                    </div>
+
+                    <h3>Frontend Developer</h3>
+
+                    <p class="company-name">Creative Tech Agency</p>
+
+                    <div class="opportunity-details">
+                        <span>🌍 Remote</span>
+                        <span>💼 Contract</span>
+                    </div>
+
+                    <p class="opportunity-description">
+                        Build responsive and user-friendly interfaces using modern
+                        frontend development technologies.
+                    </p>
+
+                    <div class="saved-card-bottom">
+                        <span class="saved-date">Saved 5 days ago</span>
+                        <a href="applications.html" class="view-button">View Opportunity</a>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../auth/auth-config.js"></script>
+<script src="../auth/auth-guard.js"></script>
+<script src="dashboard.js"></script>
+    <script src="saved.js"></script>
+
+<script src="../portal.js"></script>
+</body>
+</html>

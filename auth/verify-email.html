@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification | SJH Consult</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../redesign.css">
+<script src="auth-config.js"></script>
+</head>
+<body>
+    <main class="login-page" style="min-height:70vh;align-items:center;justify-content:center;padding:60px 20px;">
+        <section class="login-card" style="max-width:560px;text-align:center;">
+            <div class="card-top">
+                <div class="card-icon">SJH</div>
+                <span>EMAIL VERIFICATION</span>
+                <h2 id="verificationTitle">Checking your email...</h2>
+                <p id="verificationMessage">Please wait while we verify your account.</p>
+            </div>
+            <a id="verificationAction" class="login-button" href="login.html" style="display:inline-flex;text-decoration:none;justify-content:center;">Go to Login</a>
+        </section>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get("status");
+        const title = document.getElementById("verificationTitle");
+        const message = document.getElementById("verificationMessage");
+        const action = document.getElementById("verificationAction");
+
+        const states = {
+            success: [
+                "Email Verified Successfully",
+                "Your SJH Consult account is now verified. You can log in.",
+                "Go to Login"
+            ],
+            already: [
+                "Email Already Verified",
+                "This email address has already been verified. You can log in.",
+                "Go to Login"
+            ],
+            expired: [
+                "Verification Link Expired",
+                "Your verification link has expired. Return to the login page and request another verification email.",
+                "Go to Login"
+            ],
+            invalid: [
+                "Invalid Verification Link",
+                "This verification link is invalid or has already been used.",
+                "Go to Login"
+            ],
+            error: [
+                "Verification Failed",
+                "We could not verify your email right now. Please try again or request a new verification email.",
+                "Go to Login"
+            ]
+        };
+
+        const state = states[status] || states.invalid;
+        title.textContent = state[0];
+        message.textContent = state[1];
+        action.textContent = state[2];
+    </script>
+</body>
+</html>

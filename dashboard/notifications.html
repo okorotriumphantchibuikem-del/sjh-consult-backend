@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | SJH Consult</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="../redesign.css">
+<link rel="stylesheet" href="../portal.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>SJH <span>Consult</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">My Profile</a>
+            <a href="applications.html">Job Applications</a>
+            <a href="training.html">Training</a>
+            <a href="cv-review.html">CV Review</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="notifications.html" class="active">Notifications</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutButton">Logout</button>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Notifications</h1>
+                <p>Stay updated with your SJH Consult activities.</p>
+            </div>
+
+            <div class="header-user">
+                <div class="user-avatar">JD</div>
+                <div>
+                    <strong>John Doe</strong>
+                    <span>Applicant</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="notifications-section">
+
+            <div class="notifications-top">
+                <div>
+                    <h2>Your Notifications</h2>
+                    <p>Recent updates and important messages.</p>
+                </div>
+
+                <button id="markAllRead" class="mark-read-button">
+                    Mark all as read
+                </button>
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+                    <div class="notification-icon">
+                        ✓
+                    </div>
+
+                    <div class="notification-content">
+                        <h3>Welcome to SJH Consult</h3>
+                        <p>
+                            Your account has been successfully created.
+                            You can now access jobs, training and other services.
+                        </p>
+                        <span>Today</span>
+                    </div>
+
+                    <button class="delete-notification" title="Remove notification">
+                        ×
+                    </button>
+                </div>
+
+                <div class="notification-item unread">
+                    <div class="notification-icon">
+                        📄
+                    </div>
+
+                    <div class="notification-content">
+                        <h3>CV Review Available</h3>
+                        <p>
+                            You can submit your CV for professional review
+                            from your dashboard.
+                        </p>
+                        <span>Yesterday</span>
+                    </div>
+
+                    <button class="delete-notification" title="Remove notification">
+                        ×
+                    </button>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        🎓
+                    </div>
+
+                    <div class="notification-content">
+                        <h3>New Training Courses</h3>
+                        <p>
+                            New professional training opportunities are now
+                            available.
+                        </p>
+                        <span>3 days ago</span>
+                    </div>
+
+                    <button class="delete-notification" title="Remove notification">
+                        ×
+                    </button>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        💼
+                    </div>
+
+                    <div class="notification-content">
+                        <h3>New Job Opportunities</h3>
+                        <p>
+                            New employment opportunities have been added
+                            to the SJH Consult job board.
+                        </p>
+                        <span>5 days ago</span>
+                    </div>
+
+                    <button class="delete-notification" title="Remove notification">
+                        ×
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="emptyNotifications" class="empty-notifications">
+                <div class="empty-icon">🔔</div>
+                <h3>No Notifications</h3>
+                <p>You currently have no notifications.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../auth/auth-config.js"></script>
+<script src="../auth/auth-guard.js"></script>
+<script src="dashboard.js"></script>
+    <script src="notifications.js"></script>
+
+<script src="../portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find skilled professionals on SJH Consult.">
+    <title>Find Professionals | SJH Consult</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="professionals.css">
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../redesign.css">
+</head>
+
+<body>
+
+<header class="sjh-shared-header">
+    <div class="sjh-header-container">
+        <a href="../index.html" class="sjh-brand">
+            <span class="sjh-brand-mark">SJH</span>
+            <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+        </a>
+        <nav class="sjh-desktop-nav">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="professionals.html" class="active">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+            <a href="../index.html#request-workers" class="sjh-request-nav">Need Workers?</a>
+            <a href="../index.html#request-workers" class="sjh-request-nav">Need Workers?</a>
+        <a href="../auth/login.html">Login</a>
+            <a href="../auth/create-account.html" class="sjh-create">Create Account</a>
+        </nav>
+        <button class="sjh-menu-toggle" id="sjhMenuToggle" aria-label="Open navigation menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="sjh-mobile-menu" id="sjhMobileMenu">
+            <a href="../index.html">Home</a>
+            <a href="../about/about.html">About Us</a>
+            <a href="../services/services.html">Services</a>
+            <a href="../training/training.html">Training</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="professionals.html" class="active">Professionals</a>
+            <a href="../contact/contact.html">Contact Us</a>
+        <a href="../auth/login.html">Login</a>
+        <a href="../auth/create-account.html" class="sjh-create">Create Account</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <section class="directory-hero">
+
+        <div class="directory-container">
+
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                <strong>Professionals</strong>
+            </div>
+
+            <div class="directory-heading">
+
+                <div>
+
+                    <div class="section-label">
+                        SJH PROFESSIONAL NETWORK
+                    </div>
+
+                    <h1>
+                        Find the right
+                        <span>professional.</span>
+                    </h1>
+
+                    <p>
+                        Search skilled professionals by profession, service,
+                        skill or location. No account is required to browse.
+                    </p>
+
+                </div>
+
+                <div class="directory-stat">
+
+                    <strong>Growing</strong>
+
+                    <span>
+                        Professional network
+                    </span>
+
+                </div>
+
+            </div>
+
+            <form class="directory-search" id="directorySearch">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="professionInput"
+                        placeholder="Profession, skill or service"
+                    >
+
+                </div>
+
+                <div class="search-box">
+
+                    <span>⌖</span>
+
+                    <input
+                        type="text"
+                        id="locationInput"
+                        placeholder="Location"
+                    >
+
+                </div>
+
+                <button type="submit">
+                    Search Professionals
+                </button>
+
+            </form>
+
+            <div class="quick-filters">
+
+                <span>Popular:</span>
+
+                <button type="button" data-search="Web Developer">
+                    Web Developer
+                </button>
+
+                <button type="button" data-search="Graphic Designer">
+                    Graphic Designer
+                </button>
+
+                <button type="button" data-search="Fashion Designer">
+                    Fashion Designer
+                </button>
+
+                <button type="button" data-search="Plumber">
+                    Plumber
+                </button>
+
+                <button type="button" data-search="Electrician">
+                    Electrician
+                </button>
+
+                <button type="button" data-search="Carpenter">
+                    Carpenter
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="directory-section">
+
+        <div class="directory-container">
+
+            <div class="directory-top">
+
+                <div>
+
+                    <span class="result-label">
+                        PROFESSIONALS
+                    </span>
+
+                    <h2 id="resultHeading">
+                        Available professionals
+                    </h2>
+
+                </div>
+
+                <div class="directory-controls">
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        id="filterButton"
+                    >
+                        Filters
+                    </button>
+
+                    <select id="sortProfessionals">
+
+                        <option value="recommended">
+                            Recommended
+                        </option>
+
+                        <option value="experience">
+                            Most Experienced
+                        </option>
+
+                        <option value="name">
+                            Name A-Z
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="filter-panel" id="filterPanel">
+
+                <div class="filter-group">
+
+                    <label for="categoryFilter">
+                        Category
+                    </label>
+
+                    <select id="categoryFilter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="technology">
+                            Technology
+                        </option>
+
+                        <option value="design">
+                            Design
+                        </option>
+
+                        <option value="construction">
+                            Construction
+                        </option>
+
+                        <option value="fashion">
+                            Fashion
+                        </option>
+
+                        <option value="home-services">
+                            Home Services
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="filter-group">
+
+                    <label for="experienceFilter">
+                        Experience
+                    </label>
+
+                    <select id="experienceFilter">
+
+                        <option value="all">
+                            Any Experience
+                        </option>
+
+                        <option value="1">
+                            1+ Years
+                        </option>
+
+                        <option value="3">
+                            3+ Years
+                        </option>
+
+                        <option value="5">
+                            5+ Years
+                        </option>
+
+                        <option value="10">
+                            10+ Years
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="clearFilters"
+                    class="clear-filter"
+                >
+                    Clear Filters
+                </button>
+
+            </div>
+
+            <div class="professionals-grid" id="professionalsGrid">
+
+                <article
+                    class="professional-card"
+                    data-name="John Daniel"
+                    data-profession="Graphic Designer"
+                    data-location="Port Harcourt"
+                    data-category="design"
+                    data-experience="5"
+                >
+
+                    <div class="card-top">
+
+                        <div class="professional-avatar">
+                            JD
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+                    <div class="professional-content">
+
+                        <h2>
+                            John Daniel
+                        </h2>
+
+                        <strong>
+                            Graphic Designer
+                        </strong>
+
+                        <p>
+                            Branding, graphics, social media designs and
+                            professional visual identity services.
+                        </p>
+
+                        <div class="professional-meta">
+
+                            <span>
+                                ⌖ Port Harcourt
+                            </span>
+
+                            <span>
+                                5+ Years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <span class="availability">
+                            Available
+                        </span>
+
+                        <a href="#" class="view-profile">
+                            View Profile
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="professional-card"
+                    data-name="Amanda Okoro"
+                    data-profession="Fashion Designer"
+                    data-location="Lagos"
+                    data-category="fashion"
+                    data-experience="7"
+                >
+
+                    <div class="card-top">
+
+                        <div class="professional-avatar avatar-gold">
+                            AO
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+                    <div class="professional-content">
+
+                        <h2>
+                            Amanda Okoro
+                        </h2>
+
+                        <strong>
+                            Fashion Designer
+                        </strong>
+
+                        <p>
+                            Bespoke clothing, alterations, styling and
+                            fashion design services.
+                        </p>
+
+                        <div class="professional-meta">
+
+                            <span>
+                                ⌖ Lagos
+                            </span>
+
+                            <span>
+                                7+ Years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <span class="availability">
+                            Available
+                        </span>
+
+                        <a href="#" class="view-profile">
+                            View Profile
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="professional-card"
+                    data-name="Michael Kings"
+                    data-profession="Web Developer"
+                    data-location="Abuja"
+                    data-category="technology"
+                    data-experience="4"
+                >
+
+                    <div class="card-top">
+
+                        <div class="professional-avatar avatar-blue">
+                            MK
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+                    <div class="professional-content">
+
+                        <h2>
+                            Michael Kings
+                        </h2>
+
+                        <strong>
+                            Web Developer
+                        </strong>
+
+                        <p>
+                            Business websites, web applications and
+                            responsive digital solutions.
+                        </p>
+
+                        <div class="professional-meta">
+
+                            <span>
+                                ⌖ Abuja
+                            </span>
+
+                            <span>
+                                4+ Years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <span class="availability">
+                            Available
+                        </span>
+
+                        <a href="#" class="view-profile">
+                            View Profile
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="professional-card"
+                    data-name="David Johnson"
+                    data-profession="Plumber"
+                    data-location="Port Harcourt"
+                    data-category="home-services"
+                    data-experience="8"
+                >
+
+                    <div class="card-top">
+
+                        <div class="professional-avatar avatar-green">
+                            DJ
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+                    <div class="professional-content">
+
+                        <h2>
+                            David Johnson
+                        </h2>
+
+                        <strong>
+                            Plumber
+                        </strong>
+
+                        <p>
+                            Residential plumbing, repairs, installations
+                            and maintenance services.
+                        </p>
+
+                        <div class="professional-meta">
+
+                            <span>
+                                ⌖ Port Harcourt
+                            </span>
+
+                            <span>
+                                8+ Years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <span class="availability">
+                            Available
+                        </span>
+
+                        <a href="#" class="view-profile">
+                            View Profile
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="professional-card"
+                    data-name="Samuel Peter"
+                    data-profession="Electrician"
+                    data-location="Lagos"
+                    data-category="construction"
+                    data-experience="6"
+                >
+
+                    <div class="card-top">
+
+                        <div class="professional-avatar avatar-orange">
+                            SP
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+                    <div class="professional-content">
+
+                        <h2>
+                            Samuel Peter
+                        </h2>
+
+                        <strong>
+                            Electrician
+                        </strong>
+
+                        <p>
+                            Electrical installation, maintenance, repairs
+                            and residential electrical solutions.
+                        </p>
+
+                        <div class="professional-meta">
+
+                            <span>
+                                ⌖ Lagos
+                            </span>
+
+                            <span>
+                                6+ Years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <span class="availability">
+                            Available
+                        </span>
+
+                        <a href="#" class="view-profile">
+                            View Profile
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article
+                    class="professional-card"
+                    data-name="Chris Emmanuel"
+                    data-profession="Carpenter"
+                    data-location="Enugu"
+                    data-category="construction"
+                    data-experience="9"
+                >
+
+                    <div class="card-top">
+
+                        <div class="professional-avatar avatar-purple">
+                            CE
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified
+                        </span>
+
+                    </div>
+
+                    <div class="professional-content">
+
+                        <h2>
+                            Chris Emmanuel
+                        </h2>
+
+                        <strong>
+                            Carpenter
+                        </strong>
+
+                        <p>
+                            Furniture production, interior woodwork,
+                            repairs and custom designs.
+                        </p>
+
+                        <div class="professional-meta">
+
+                            <span>
+                                ⌖ Enugu
+                            </span>
+
+                            <span>
+                                9+ Years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <span class="availability">
+                            Available
+                        </span>
+
+                        <a href="#" class="view-profile">
+                            View Profile
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="no-results" id="noResults">
+
+                <div>
+                    ⌕
+                </div>
+
+                <h2>
+                    No professionals found
+                </h2>
+
+                <p>
+                    Try another profession, skill, location or filter.
+                </p>
+
+                <button type="button" id="resetSearch">
+                    Reset Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="join-professional">
+
+        <div class="join-professional-container">
+
+            <div>
+
+                <div class="section-label">
+                    ARE YOU A PROFESSIONAL?
+                </div>
+
+                <h2>
+                    Put your skills in front
+                    of <span>more people.</span>
+                </h2>
+
+                <p>
+                    Create an account, complete your professional profile
+                    and make it easier for people to discover your services.
+                </p>
+
+            </div>
+
+            <a href="../auth/create-account.html">
+                Create Your Account
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="professionals.js"></script>
+<footer class="sjh-shared-footer">
+    <div class="sjh-footer-container">
+        <div class="sjh-footer-brand">
+            <a href="../index.html" class="sjh-brand">
+                <span class="sjh-brand-mark">SJH</span>
+                <span class="sjh-brand-text"><strong>SJH Consult</strong><small>PROFESSIONAL SERVICES</small></span>
+            </a>
+            <p>Connecting people, professionals and opportunities through trusted services and career support.</p>
+        </div>
+        <div class="sjh-footer-links">
+            <div><h2>Explore</h2><a href="../index.html">Home</a><a href="../about/about.html">About Us</a><a href="../services/services.html">Services</a><a href="../training/training.html">Training</a></div>
+            <div><h2>Opportunities</h2><a href="../jobs/jobs.html">Jobs</a><a href="professionals.html">Professionals</a><a href="../services/cv-review.html">CV Review</a><a href="../contact/contact.html">Contact Us</a></div>
+            <div><h2>Account</h2><a href="../auth/login.html">Login</a><a href="../auth/create-account.html">Create Account</a></div>
+        </div>
+    </div>
+    <div class="sjh-footer-bottom"><span>&copy; 2026 SJH Consult. All rights reserved.</span><span>Professional Services</span></div>
+</footer>
+    <script src="../shared.js"></script>
+</body>
+</html>
