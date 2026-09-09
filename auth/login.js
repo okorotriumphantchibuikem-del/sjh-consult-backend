@@ -9,10 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
         : null;
     const resendLink = document.getElementById("resendVerificationLink");
 
-    const apiBase = window.SJH_API_BASE ||
-        "https://sjh-consult-backend-production.up.railway.app";
+    // SJH CONSULT PRODUCTION BACKEND
+    const apiBase = "https://sjh-consult-backend-production.up.railway.app";
 
     if (!loginForm) {
+        console.error("SJH Consult: login form not found.");
         return;
     }
 
@@ -42,8 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isLoading) {
             loginButton.disabled = true;
-            loginButton.dataset.originalHtml =
-                loginButton.innerHTML;
+
+            if (!loginButton.dataset.originalHtml) {
+                loginButton.dataset.originalHtml =
+                    loginButton.innerHTML;
+            }
 
             loginButton.innerHTML =
                 "<span>Signing In...</span>";
@@ -69,39 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function redirectToDashboard() {
-        const redirect =
-            new URLSearchParams(
-                window.location.search
-            ).get("redirect");
-
-        if (
-            redirect &&
-            (
-                redirect.startsWith("http://") ||
-                redirect.startsWith("https://")
-            )
-        ) {
-            try {
-                const target = new URL(redirect);
-
-                if (
-                    target.origin ===
-                    window.location.origin
-                ) {
-                    window.location.replace(
-                        target.href
-                    );
-
-                    return;
-                }
-            } catch (e) {}
-        }
-
         window.location.replace(
             "../dashboard/dashboard.html"
         );
     }
 
+    // PASSWORD SHOW / HIDE
     if (passwordToggle && passwordInput) {
         passwordToggle.addEventListener(
             "click",
@@ -125,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
+    // LOGIN
     loginForm.addEventListener(
         "submit",
         async function (event) {
@@ -145,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Please enter your email address and password.",
                     "error"
                 );
-
                 return;
             }
 
@@ -154,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Please enter a valid email address.",
                     "error"
                 );
-
                 return;
             }
 
@@ -163,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Your password must contain at least 8 characters.",
                     "error"
                 );
-
                 return;
             }
 
@@ -193,7 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 try {
                     data = await response.json();
                 } catch (parseError) {
-                    data = {};
+                    console.error(
+                        "SJH login response was not JSON:",
+                        parseError
+                    );
                 }
 
                 if (
@@ -208,10 +186,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     setLoading(false);
-
                     return;
                 }
 
+                // Save the returned user information locally.
                 saveUserSession(data.user);
 
                 showMessage(
@@ -221,17 +199,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 setTimeout(
                     redirectToDashboard,
-                    250
+                    500
                 );
 
             } catch (error) {
                 console.error(
-                    "SJH login error:",
+                    "SJH Consult login connection error:",
                     error
                 );
 
                 showMessage(
-                    "Unable to connect to the SJH Consult server. Please try again.",
+                    "Unable to connect to SJH Consult server. Please check your internet connection and try again.",
                     "error"
                 );
 
@@ -240,6 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+    // RESEND EMAIL VERIFICATION
     if (resendLink) {
         resendLink.addEventListener(
             "click",
@@ -270,7 +249,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         "Please enter a valid email address.",
                         "error"
                     );
-
                     return;
                 }
 
@@ -282,7 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             method: "POST",
 
                             headers: {
-                                "Content-Type": "application/json"
+                                "Content-Type":
+                                    "application/json"
                             },
 
                             credentials: "include",
@@ -298,7 +277,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     try {
                         data = await response.json();
                     } catch (parseError) {
-                        data = {};
+                        console.error(
+                            "Verification response error:",
+                            parseError
+                        );
                     }
 
                     showMessage(
@@ -316,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     showMessage(
-                        "Unable to connect to the SJH Consult server.",
+                        "Unable to connect to SJH Consult server.",
                         "error"
                     );
                 }
